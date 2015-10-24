@@ -16,11 +16,8 @@ public class M2PlayerControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerWidth = this.gameObject.renderer.bounds.size.x/100;
-		playerHeight = this.gameObject.renderer.bounds.size.y/100;
-
-		Debug.Log("X: " + this.gameObject.renderer.bounds.size.x);
-		Debug.Log("Y: " + this.gameObject.renderer.bounds.size.y);
+		playerWidth = this.gameObject.GetComponent<Renderer>().bounds.size.x/100;
+		playerHeight = this.gameObject.GetComponent<Renderer>().bounds.size.y/100;
 	}
 	
 	// Update is called once per frame
