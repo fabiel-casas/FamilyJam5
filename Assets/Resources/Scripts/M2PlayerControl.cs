@@ -39,15 +39,15 @@ public class M2PlayerControl : MonoBehaviour {
 
 
 	public void Move (Vector2 direction){
+		//Find limits
 		min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0)); //Find screen limits
 		max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1)); //Find screen limits
 
-		//Debug.Log("min: " + min + " max: " + max);
-
-		//Set the center of the character
+		//Set the center of the character X
 		max.x = max.x - playerWidth/2;
 		min.x = min.x + playerWidth/2;
 
+		//Set the center of the character Y
 		min.y = min.y + playerHeight/2;
 		min.y = min.y + playerHeight/2;
 
@@ -63,8 +63,6 @@ public class M2PlayerControl : MonoBehaviour {
 
 		//Update player position
 		transform.position = position;
-
-		Debug.Log("Min: " + min + " Max: " + max);
 
 	}
 }
