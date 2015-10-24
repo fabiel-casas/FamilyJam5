@@ -22,8 +22,6 @@ public class M2PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float tempX = x;
-		float tempY = y;
 		x = Input.GetAxisRaw ("Horizontal"); // -1 Left, 0 Still, 1 Right 
 		y = Input.GetAxisRaw ("Vertical"); // -1 Down, 0 Still, 1 Up 
 

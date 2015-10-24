@@ -5,9 +5,9 @@ public enum Type{
 	Carrot,Tomato,Pepper,Cake,Radish
 }
 
-public class M2Food : MonoBehaviour {
+public class M2FoodController : MonoBehaviour {
 
-	public float speed = 8f;
+	public float speed = 2f;
 	public Type type = Type.Cake;
 	
 
@@ -30,6 +30,7 @@ public class M2Food : MonoBehaviour {
 		//this is the bottom-left point 
 		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
+		//If food left the corner, destroy it
 		if(transform.position.x < min.x){
 			Destroy (gameObject);
 		}
