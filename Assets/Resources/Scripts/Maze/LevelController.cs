@@ -17,7 +17,7 @@ public class LevelController : MonoBehaviour {
 	void Start () {
     gift_count = 0;
     GiftController[] gifList = FindObjectsOfType<GiftController>();
-    number_gift = gifList.Length - 1;
+    number_gift = gifList.Length - 3;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +34,8 @@ public class LevelController : MonoBehaviour {
     if(number_gift <= gift_count) {
       textMessage.text = "Has completado el nivel";
       endGame = true;
+      PlayerPrefs.SetString("middle1", "complete");
+      StartCoroutine(WaitAndPrint(2.0F));
       Time.timeScale = 0;
     }
   }
@@ -61,5 +63,10 @@ public class LevelController : MonoBehaviour {
       return "0" + value;
     }
     return ""+value;
+  }
+
+  IEnumerator WaitAndPrint(float waitTime) {
+    yield return new WaitForSeconds(waitTime);
+    Application.LoadLevel(1);
   }
 }

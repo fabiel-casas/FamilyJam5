@@ -37,7 +37,14 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void maxSweetnessReached(){
+    PlayerPrefs.SetString("middle2", "complete");
+    StartCoroutine(WaitAndPrint(2.0F));
 		Debug.Log("Made it!!!!!!!!!!!");
-	}
+  }
+
+  IEnumerator WaitAndPrint(float waitTime) {
+    yield return new WaitForSeconds(waitTime);
+    Application.LoadLevel(1);
+  }
 
 }
