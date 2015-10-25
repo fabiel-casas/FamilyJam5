@@ -85,9 +85,9 @@ public class M2FoodController : MonoBehaviour {
 		if (collision.gameObject.tag == "Player"){
 			Destroy(gameObject);
 			if((tag == "Healthy Food")){
-				levelManager.changeSweetness(-5f);
+				levelManager.changeSweetness(-7f);
 			} else if ((tag == "Spicy Food")){
-				levelManager.changeSweetness(-15f);
+				levelManager.changeSweetness(-35f);
 			} else if ((tag == "Sweet Food")){
 				levelManager.changeSweetness(+10f);
 			}
