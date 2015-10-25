@@ -3,8 +3,8 @@ using System.Collections;
 
 public class M2PlayerControl : MonoBehaviour {
 
-	public float playerWidth;
-	public float playerHeight;
+	private float playerWidth;
+	private float playerHeight;
 	public float speed;
 
 	private float x;
@@ -60,4 +60,10 @@ public class M2PlayerControl : MonoBehaviour {
 		transform.position = position;
 
 	}
+
+	void OnTriggerEnter2D(Collider2D collision){
+		//Detect collision of the player with a healthy food item
+		Debug.Log("Collided!");
+	}
+
 }
