@@ -49,6 +49,7 @@ public class LevelController : MonoBehaviour {
     countDown.text = zeroLeft(minutes) + ":" + zeroLeft(seconds);
     if(restTime <= 0) {
       endGame = true;
+      textMessage.text = "Se ha agotado el tiempo";
     }
     if(restTime <= 60) {
       countDown.color = Color.red;
